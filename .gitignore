@@ -1,0 +1,96 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency caching
+.npm/
+.pnp/
+.pnp.js
+.pnpm-debug.log*
+.yarn/
+.yarn-integrity
+.yarn-metadata.json
+.yarnrc.yml
+
+# Logs
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+debug.log
+output.log
+out.log
+
+# Build artifacts
+dist/
+build/
+.next/
+out/
+.tmp/
+coverage/
+*.tsbuildinfo
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.DS_Store
+*.log
+
+# Docker
+docker-compose.override.yml
+docker-compose.debug.yml
+.docker/
+.dockerignore
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+jest.config.js
+jest/
+.nyc_output/
+coverage/
+test-reports/
+cypress/screenshots/
+cypress/videos/
+
+# Java related
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+target/
+bin/
+
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env*.local
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Monorepo tools (Nx, Turborepo, Lerna)
+.nx/
+.turbo/
+lerna-debug.log*
