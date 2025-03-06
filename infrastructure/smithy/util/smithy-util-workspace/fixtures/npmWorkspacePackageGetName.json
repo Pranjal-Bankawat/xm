@@ -1,0 +1,12 @@
+{
+	"@sapn/assert": "@sapn/assert",
+	"@sapn/type": "@sapn/type",
+	"@sapn/fetch": "@sapn/fetch",
+	"@sapn/elsa": "@sapn/elsa",
+	"@sapn/elsa-job": "@sapn/elsa-job",
+	"@sapn/elsa-k8s": "@sapn/elsa-k8s",
+	"@sapn/elsa-util": "@sapn/elsa-util",
+	"@sapn/elsa-cli": "@sapn/elsa-cli",
+	"@sapn/ui": "@sapn/ui",
+	"@sapn/common-ui": "@sapn/common-ui"
+}

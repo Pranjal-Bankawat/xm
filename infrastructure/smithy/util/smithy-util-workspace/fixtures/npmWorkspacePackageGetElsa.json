@@ -1,0 +1,137 @@
+{
+	"@sapn/assert": {
+		"owner": ["core"]
+	},
+	"@sapn/type": {
+		"owner": ["core"]
+	},
+	"@sapn/fetch": {
+		"owner": ["core"]
+	},
+	"@sapn/elsa": {
+		"owner": ["core"],
+		"service": {
+			"moduleName": "elsa",
+			"projectName": "elsa-service",
+			"moduleOwner": "someOwner@sap.com",
+			"name": "elsa",
+			"manifestBasePath": "k8s/base",
+			"baseImageName": "elsa",
+			"manifestImageName": "c4c.common.repositories.cloud.sap/elsa",
+			"includes": "*,dist/**",
+			"manifestPaths": ["k8s/staging/aws", "k8s/pre-prod/aws", "k8s/prod/aws"],
+			"security": {
+				"protecodeGroupId": "someElsaProtecodeGroupId",
+				"checkmarxProjectName": "someElsaCheckmarxProjectName",
+				"sonar": true,
+				"cumulus": {
+					"pipelineId": "someElsaPipelineId"
+				},
+				"whitesource": {
+					"productToken": "someElsaProductToken"
+				},
+				"ppmsId": "someElsaPPMSId"
+			},
+			"build": {
+				"type": "alpine",
+				"overwrites": {
+					"buildEnvironmentVariables": {},
+					"additionalNpmDependencies": []
+				}
+			},
+			"delivery": {
+				"integrationTests": [
+					{
+						"label": "IT Label",
+						"npmPackageName": "someNpmPackageName",
+						"targets": ["test:it"]
+					}
+				]
+			}
+		}
+	},
+	"@sapn/elsa-k8s": {
+		"owner": ["core"],
+		"moduleName": "elsa",
+		"projectName": "elsa-k8s",
+		"name": "elsa-k8s",
+		"manifest": {
+			"paths": ["k8s/**/dev/aws", "k8s/**/staging/aws", "k8s/**/pre-prod/aws", "k8s/**/prod/aws"]
+		}
+	},
+	"@sapn/elsa-job": {
+		"owner": ["core"],
+		"job": {
+			"moduleName": "elsa",
+			"projectName": "elsa-job",
+			"moduleOwner": "someOwner@sap.com",
+			"name": "elsa-job",
+			"manifestBasePath": "k8s/base",
+			"baseImageName": "elsa-job",
+			"manifestImageName": "c4c.common.repositories.cloud.sap/elsa-job",
+			"manifestReplacements": [
+				{
+					"placeholderName": "PLACEHOLDER",
+					"parameterName": "PARAMETER"
+				}
+			],
+			"includes": "*,dist/**",
+			"security": {
+				"protecodeGroupId": "someElsaJobProtecodeGroupId",
+				"checkmarxProjectName": "someElsaJobCheckmarxProjectName",
+				"sonar": true,
+				"cumulus": {
+					"pipelineId": "someElsaJobPipelineId"
+				},
+				"whitesource": {
+					"productToken": "someElsaJobProductToken"
+				},
+				"ppmsId": "someElsaJobPPMSId"
+			},
+			"build": {
+				"type": "alpine",
+				"overwrites": {
+					"buildEnvironmentVariables": {},
+					"additionalNpmDependencies": []
+				}
+			}
+		}
+	},
+	"@sapn/elsa-util": {
+		"owner": ["core"]
+	},
+	"@sapn/elsa-cli": {
+		"owner": ["owner", "core"]
+	},
+	"@sapn/ui": {
+		"owner": ["uidev", "core", "repository"],
+		"ui": {
+			"moduleName": "elsa",
+			"projectName": "elsa-ui",
+			"moduleOwner": "someOwner@sap.com",
+			"name": "elsa-ui",
+			"security": {
+				"whitesource": {
+					"productToken": "someProductToken"
+				},
+				"ppmsId": "--TBD--"
+			}
+		}
+	},
+	"@sapn/common-ui": {
+		"owner": ["uidev", "core", "repository"],
+		"ui": {
+			"moduleName": "elsa",
+			"projectName": "elsa-common-ui",
+			"moduleOwner": "someOwner@sap.com",
+			"name": "elsa-common-ui",
+			"s3UploadDirectory": "sap-n-common-ui",
+			"security": {
+				"whitesource": {
+					"productToken": "someProductToken"
+				},
+				"ppmsId": "--TBD--"
+			}
+		}
+	}
+}

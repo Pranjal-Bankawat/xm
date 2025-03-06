@@ -1,0 +1,44 @@
+{
+	"tasks": [
+		{
+			"id": "@sapn/elsa-job:build",
+			"target": {
+				"project": "@sapn/elsa-job",
+				"target": "build"
+			},
+			"outputs": ["job/elsa-job/dist"]
+		},
+		{
+			"id": "@sapn/elsa-k8s:build",
+			"target": {
+				"project": "@sapn/elsa-k8s",
+				"target": "build"
+			},
+			"outputs": ["infrastructure/elsa-k8s/dist"]
+		},
+		{
+			"id": "@sapn/elsa:build",
+			"target": {
+				"project": "@sapn/elsa",
+				"target": "build"
+			},
+			"outputs": ["service/elsa/dist"]
+		},
+		{
+			"id": "@sapn/ui:build",
+			"target": {
+				"project": "@sapn/ui",
+				"target": "build"
+			},
+			"outputs": ["ui/projects/elsa/dist"]
+		},
+		{
+			"id": "@sapn/common-ui:build",
+			"target": {
+				"project": "@sapn/common-ui",
+				"target": "build"
+			},
+			"outputs": ["ui/projects/elsa/dist"]
+		}
+	]
+}
