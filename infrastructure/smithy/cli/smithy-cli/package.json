@@ -15,8 +15,8 @@
     "prepack": "npm run build",
     "pack": "cross-env-shell npm pack dist/ --pack-destination $npm_pack_destination"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["cli", "build-tool"],
+  "author": "Pranjal Bankawat",
   "license": "ISC",
   "description": "",
   "dependencies": {
