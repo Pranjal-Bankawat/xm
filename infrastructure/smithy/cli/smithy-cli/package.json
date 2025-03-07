@@ -1,9 +1,18 @@
 {
   "name": "smithy-cli",
   "version": "1.0.0",
-  "main": "index.js",
+  "bin": {
+    "smithy": "./bin/smithy.js"
+  },
+  "files": [
+    "bin/",
+    "cli.json"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "smithy build bundle",
+    "clean": "rimraf node_modules dist report",
+    "prepack": "npm run build",
+    "pack": "cross-env-shell npm pack dist/ --pack-destination $npm_pack_destination"
   },
   "keywords": [],
   "author": "",

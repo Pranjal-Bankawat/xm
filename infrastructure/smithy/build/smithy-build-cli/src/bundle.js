@@ -36,13 +36,16 @@ module.exports = {
 				}
 			}),
 	handler: async function bundle({ config: buildBundleConfig, analyze, minify, legacy, verbose, workspaceName }) {
+		const { smithyBuild, smithyBuildService, smithyGetWorkspaces } = require('./temp/temp');
 		if (verbose) {
 			process.env.npm_config_loglevel = 'verbose';
 		}
 
 		const { resolve } = require('path');
-		const build = require('@sapn/elsa-build-service');
-		const getWorkspaces = require('@sapn/elsa-util-workspace/get');
+		const build = smithyBuild;
+		const getWorkspaces = smithyGetWorkspaces
+		// const build = require('@sapn/elsa-build-service');
+		// const getWorkspaces = require('@sapn/elsa-util-workspace/get');
 
 		const workspace = getWorkspaces([workspaceName], { dependencies: false, metadata: false })[workspaceName];
 		const configMap = require(resolve(workspace.location, buildBundleConfig));
@@ -55,7 +58,7 @@ module.exports = {
 
 		await build({ config, verbose, workspace });
 		if (legacy) {
-			const buildService = require('@sapn/elsa-build-service/service');
+			const buildService = smithyBuildService
 			await buildService({ verbose, workspace, legacy });
 		}
 	}
