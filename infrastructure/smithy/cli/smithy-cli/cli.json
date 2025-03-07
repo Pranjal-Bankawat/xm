@@ -1,5 +1,5 @@
 {
     "commands": [
-        { "import": "smithy/elsa-build-cli" }
+        { "import": "build/build.js" }
     ]
 }
