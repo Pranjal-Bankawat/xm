@@ -6,7 +6,8 @@
   },
   "files": [
     "bin/",
-    "cli.json"
+    "cli.json",
+    "build/"
   ],
   "scripts": {
     "build": "smithy build bundle",

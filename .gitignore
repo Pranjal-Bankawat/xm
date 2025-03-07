@@ -1,95 +1,154 @@
-# Node.js dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# Dependency caching
-.npm/
-.pnp/
-.pnp.js
-.pnpm-debug.log*
-.yarn/
-.yarn-integrity
-.yarn-metadata.json
-.yarnrc.yml
-
-# Logs
-logs/
-*.log
-*.log.*
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
-debug.log
-output.log
-out.log
-
-# Build artifacts
-dist/
-.next/
-out/
-.tmp/
-coverage/
-*.tsbuildinfo
-
-# IDE and Editor files
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.swp
-*.DS_Store
-*.log
-
-# Docker
-docker-compose.override.yml
-docker-compose.debug.yml
-.docker/
-.dockerignore
-
-# TypeScript
-*.tsbuildinfo
-
-# Testing
-jest.config.js
-jest/
-.nyc_output/
-coverage/
-test-reports/
-cypress/screenshots/
-cypress/videos/
-
-# Java related
-*.class
-*.jar
-*.war
-*.ear
-*.iml
-target/
-bin/
-
-# Environment Variables
-.env
-.env.local
-.env.development
-.env.test
-.env.production
-.env*.local
-
-# Miscellaneous
-.DS_Store
+#os
+**/.DS_Store
 Thumbs.db
-*.swp
-*.swo
-*.bak
-*.orig
 
-# Monorepo tools (Nx, Turborepo, Lerna)
+#IDE
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.nvim
+.nvim.lua
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# local configuration
+.envrc
+.env.*
+/.env
+.husky/_
+
+#tmp
+tmp/
+*.log
+*.cache
+
+#node
+npm-debug.log*
+node_modules/
+dist/
+databases/
+http_request_archive/
+application/**/package-lock.json
+core/**/package-lock.json
+infrastructure/**/package-lock.json
+job/**/package-lock.json
+lib/**/package-lock.json
+proto/**/package-lock.json
+resource/**/package-lock.json
+server/**/package-lock.json
+service/**/package-lock.json
+ui/**/package-lock.json
+/log/
+
+#typescript
+/out-tsc
+/typings
+
+# profiling files
+chrome-profiler-events*.json
+
+#client
+client/sap-client
+client/sap-client-cod
+
+#report(s)
+report/
+coverage/
+.c8_output/
+.stryker-tmp/
+
+#IDE
+!.run/**
+
+#xmake
+.xmake/
+gen/
+import/
+
+# sonar
+.scannerwork
+.oracle_jre_usage
+sonar.*.properties
+
+#whitesource
+**/whitesource/
+**/wss-unified-agent.config*
+**/whitesource.ua.config*
+**/ws-ls.txt
+**/ws-lsJson.json
+**/whitesource*.json
+**/whitesource*.pdf
+**/wss-unified-agent.jar
+
+#certificates
+**/postgres_ca
+
+# Piper
+.pipeline/
+toolruns/
+piper
+sap-piper
+**/sap*_errorDetails.json
+
+# n
+**/dependencyTree.json
+deployment.json
+uiDeployment.json
+provisioning.lock.json
+
+# Checkmarx
+CxSAST*
+checkmarx/
+checkmarxExecuteScan*
+
+# Protecode
+./cache/
+protecode*
+!infrastructure/sap-n-elsa-util/**/protecode*
+!infrastructure/elsa/util/elsa-util/**/protecode*
+!infrastructure/elsa/cli/elsa-cli/**/protecode*
+!infrastructure/sap-n-elsa-cli/**/protecode*
+
+# generated lifecycle files
+provision.lock.json
+provision.metadata.json
+
+# PPMS Compliance
+piper_whitesource_ppms_report.html
+sapCheckPPMSCompliance_*.json
+
+# Bazel
+/bazel-out
+bazel-*/
+bazel-*
+
+# ESLint
+.eslintcache
+
+# Local scratch
+.scratch
+
+**/favicon.ico
+.angular
+.sass-cache
+.staging
+testem.log
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# nx
 .nx/
-.turbo/
-lerna-debug.log*
+migrations.json
+.nx/cache
+/**/http-client.private.env.json
