@@ -1,0 +1,5 @@
+{
+    "commands": [
+        { "import": "../build/build.js" }
+    ]
+}

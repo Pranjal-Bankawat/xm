@@ -1,0 +1,19 @@
+{
+  "name": "cxmsmithy-cli",
+  "version": "1.0.0",
+  "bin": {
+    "cxmsmithy": "./bin/cxmsmithy.js"
+  },
+  "files": [
+    "bin/",
+    "cli.json",
+    "build/"
+  ],
+  "keywords": ["cli", "build-tool"],
+  "author": "Pranjal Bankawat",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
