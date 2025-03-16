@@ -1,0 +1,32 @@
+{
+	"extends": [
+		"plugin:@sapn/elsa/infrastructure"
+	],
+	"overrides": [
+		{
+			"files": [
+				"**/src/**/*.js"
+			],
+			"rules": {
+				"no-restricted-modules": [
+					"error",
+					{
+						"patterns": [
+							"@sapn/*",
+							"!@sapn/fetch",
+							"!@sapn/elsa-util-*"
+						]
+					}
+				]
+			}
+		},
+		{
+			"files": [
+				"fixtures/ui/projects/**/package.json"
+			],
+			"rules": {
+				"@sapn/elsa/package/owner": 0
+			}
+		}
+	]
+}

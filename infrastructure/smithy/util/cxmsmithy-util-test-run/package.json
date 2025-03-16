@@ -1,0 +1,54 @@
+{
+  "name": "@sapn/elsa-util-test-run",
+  "version": "0.35.0",
+  "description": "Module for test utils of runs",
+  "files": [
+    "src/"
+  ],
+  "exports": {
+    "./util/code/assertTargetCodeValues": "./src/util/code/assertTargetCodeValues.js",
+    "./util/code/createTenantSpecificDistributionChannelData": "./src/util/code/createTenantSpecificDistributionChannelData.js",
+    "./util/code/createTenantSpecificRootData": "./src/util/code/createTenantSpecificRootData.js",
+    "./util/code/createTenantSpecificUnitOfMeasureData": "./src/util/code/createTenantSpecificUnitOfMeasureData.js",
+    "./util/code/deleteAllTenantSpecificCodeData": "./src/util/code/deleteAllTenantSpecificCodeData.js",
+    "./util/code/deleteTenantSpecificCodeData": "./src/util/code/deleteTenantSpecificCodeData.js",
+    "./util/code/initializeTenantSpecificCodeData": "./src/util/code/initializeTenantSpecificCodeData.js",
+    "./util/code/readNormalizedCodeDataByTenant": "./src/util/code/readNormalizedCodeDataByTenant.js",
+    "./util/code/readTableWithTenantId": "./src/util/code/readTableWithTenantId.js"
+  },
+  "scripts": {
+    "publish:artifactory": "npm publish",
+    "publish:staging": "cross-env-shell npm pack --pack-destination $npm_pack_destination",
+    "clean": "rimraf node_modules dist report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.tools.sap/elsa/sap-n/tree/main/infrastructure/elsa/util/elsa-util-test-run"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": {
+    "name": "SAP SE"
+  },
+  "contributors": [],
+  "elsa": {
+    "owner": [
+      "d046240",
+      "d028589",
+      "d031161",
+      "d047364",
+      "d072124",
+      "d041175",
+      "d028975",
+      "cam_c4c_elsa_masterdata_member",
+      "cam_c4c_elsa_bupa_member"
+    ]
+  },
+  "license": "MIT",
+  "nx": {
+    "tags": [
+      "scope:infrastructure"
+    ]
+  }
+}

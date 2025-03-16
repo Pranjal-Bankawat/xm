@@ -1,0 +1,22 @@
+{
+	"extends": [
+		"plugin:@sapn/elsa/infrastructure"
+	],
+	"overrides": [
+		{
+			"files": [
+				"**/src/**/*.js"
+			],
+			"rules": {
+				"no-restricted-modules": [
+					"error",
+					{
+						"patterns": [
+							"!@sapn/elsa-util-mocha"
+						]
+					}
+				]
+			}
+		}
+	]
+}

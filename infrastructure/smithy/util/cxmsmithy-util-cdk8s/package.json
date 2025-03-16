@@ -1,0 +1,52 @@
+{
+  "name": "@sapn/elsa-util-cdk8s",
+  "version": "0.35.0",
+  "description": "Elastic Service Architecture - cdk8s wrapper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.tools.sap/elsa/sap-n/tree/main/infrastructure/elsa/elsa-cdk8s"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/main.js"
+  },
+  "scripts": {
+    "import": "cdk8s import",
+    "synth": "cdk8s synth",
+    "clean": "rimraf node_modules report"
+  },
+  "keywords": [
+    "elsa",
+    "cdk8s"
+  ],
+  "contributors": [
+    "Thomas Biesemann <thomas.biesemann@sap.com>",
+    "Tim Kornmann <tim.kornmann@sap.com>",
+    "Marco Szabo <marco.szabo@sap.com>"
+  ],
+  "elsa": {
+    "owner": [
+      "cam_c4c_elsa_owner_member",
+      "cam_c4c_elsa_core_member"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@nx/devkit": "19.6.4",
+    "@sapn/elsa-test": "*",
+    "@sapn/uuid": "*",
+    "@types/tar-fs": "^2.0.1"
+  },
+  "dependencies": {
+    "cdk8s": "^2.68.89",
+    "cdk8s-plus-29": "^2.5.3",
+    "constructs": "^10.3.0"
+  },
+  "nx": {
+    "tags": [
+      "scope:infrastructure"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"extends": ["plugin:@sapn/elsa/infrastructure"],
+	"overrides": [
+		{
+			"files": ["**/src/setup.js"],
+			"rules": {
+				"no-process-exit": 0
+			}
+		}
+	]
+}

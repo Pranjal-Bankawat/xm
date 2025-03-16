@@ -1,0 +1,77 @@
+{
+	"name": "@sapn/elsa-util-cdk8s",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"sourceRoot": "infrastructure/elsa/util/elsa-util-cdk8s/src",
+	"projectType": "library",
+	"targets": {
+		"build:dist": {
+			"executor": "@nx/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"main": "infrastructure/elsa/util/elsa-util-cdk8s/src/index.ts",
+				"outputPath": "infrastructure/elsa/util/elsa-util-cdk8s/dist",
+				"rootDir": "infrastructure/elsa/util/elsa-util-cdk8s/src",
+				"tsConfig": "infrastructure/elsa/util/elsa-util-cdk8s/tsconfig.lib.json",
+				"clean": true
+			}
+		},
+		"build:plugin": {
+			"executor": "nx:run-commands",
+			"dependsOn": ["build:dist"],
+			"options": {
+				"command": "rimraf infrastructure/elsa/util/elsa-util-cdk8s/dist/package.json"
+			}
+		},
+		"lint": {
+			"executor": "@nx/eslint:lint",
+			"outputs": ["{options.outputFile}"]
+		},
+		"lint:sonar": {
+			"executor": "@nx/eslint:lint",
+			"options": {
+				"outputFile": "infrastructure/elsa/util/elsa-util-cdk8s/report/sonar/eslint.json",
+				"format": "@sapn/elsa-sonar",
+				"cache": true,
+				"force": true
+			}
+		},
+		"lint:sonar:pr": {
+			"executor": "@nx/eslint:lint",
+			"options": {
+				"outputFile": "infrastructure/elsa/util/elsa-util-cdk8s/report/sonar/eslint.json",
+				"format": "@sapn/elsa-sonar",
+				"cache": true,
+				"force": true
+			}
+		},
+		"test": {
+			"executor": "@nx/jest:jest",
+			"outputs": ["{projectRoot}/coverage"],
+			"options": {
+				"jestConfig": "infrastructure/elsa/util/elsa-util-cdk8s/jest.config.js"
+			}
+		},
+		"coverage": {
+			"executor": "@nx/jest:jest",
+			"options": {
+				"jestConfig": "infrastructure/elsa/util/elsa-util-cdk8s/jest.config.js",
+				"codeCoverage": true,
+				"passWithNoTests": false
+			}
+		},
+		"coverage:sonar": {
+			"executor": "@nx/jest:jest",
+			"options": {
+				"jestConfig": "infrastructure/elsa/util/elsa-util-cdk8s/jest.config.js",
+				"coverageThreshold": "{}",
+				"codeCoverage": true,
+				"passWithNoTests": false
+			}
+		},
+		"prepare": {
+			"executor": "nx:noop",
+			"dependsOn": ["build"]
+		}
+	},
+	"tags": ["scope:infrastructure"]
+}
