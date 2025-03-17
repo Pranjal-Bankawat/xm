@@ -1,7 +1,0 @@
-const METADATA_DIRECTORY_NAME = 'metadata';
-const CONTENT_DIRECTORY_NAME = 'content';
-
-module.exports = {
-	METADATA_DIRECTORY_NAME,
-	CONTENT_DIRECTORY_NAME
-};
